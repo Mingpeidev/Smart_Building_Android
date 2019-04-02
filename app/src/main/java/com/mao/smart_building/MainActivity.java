@@ -10,15 +10,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mao.smart_building.Adapter.MyFragmentAdapter;
 import com.mao.smart_building.Fragment.DoorFragment;
 import com.mao.smart_building.Fragment.MainpageFragment;
-import com.mao.smart_building.Fragment.SensorFragment;
 import com.mao.smart_building.Fragment.SetFragment;
-import com.mao.smart_building.R;
-import com.mao.smart_building.Util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,19 +22,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView mainBtn = null;
-    private ImageView sensorBtn = null;
     private ImageView doorBtn = null;
     private ImageView setBtn = null;
 
     private TextView mainText = null;
-    private TextView sensorText = null;
     private TextView doorText = null;
     private TextView setText = null;
 
     private TextView title;
 
     private LinearLayout mainpage_layout;
-    private LinearLayout sensor_layout;
     private LinearLayout door_layout;
     private LinearLayout set_layout;
 
@@ -49,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MyFragmentAdapter myFragmentAdapter;
     FragmentManager mfragmentManager;
 
-    String[] titleName = new String[]{"智能楼宇安防系统", "传感器", "门禁", "个人"};
+    String[] titleName = new String[]{"控制台", "门禁", "个人中心"};
     List<Fragment> mfragmentList = new ArrayList<Fragment>();
 
     @Override
@@ -77,17 +70,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mViewPager.setCurrentItem(0);
                 updateBottomLinearLayoutBackground(0);
                 break;
-            case R.id.sensor_layout:
+            case R.id.door_layout:
                 mViewPager.setCurrentItem(1);
                 updateBottomLinearLayoutBackground(1);
                 break;
-            case R.id.door_layout:
+            case R.id.set_layout:
                 mViewPager.setCurrentItem(2);
                 updateBottomLinearLayoutBackground(2);
-                break;
-            case R.id.set_layout:
-                mViewPager.setCurrentItem(3);
-                updateBottomLinearLayoutBackground(3);
                 break;
             default:
                 break;
@@ -96,12 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initFragmetList() {
         Fragment mainFragment = new MainpageFragment();
-        Fragment sensorFragment = new SensorFragment();
         Fragment doorFragment = new DoorFragment();
         Fragment setFragment = new SetFragment();
 
         mfragmentList.add(mainFragment);
-        mfragmentList.add(sensorFragment);
         mfragmentList.add(doorFragment);
         mfragmentList.add(setFragment);
 
@@ -111,19 +98,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         title = (TextView) findViewById(R.id.title_text);
 
         mainText = (TextView) findViewById(R.id.main_text);
-        sensorText = (TextView) findViewById(R.id.sensor_text);
         doorText = (TextView) findViewById(R.id.door_text);
         setText = (TextView) findViewById(R.id.set_text);
 
         mainBtn = (ImageView) findViewById(R.id.main_Btn);
-        sensorBtn = (ImageView) findViewById(R.id.sensor_Btn);
         doorBtn = (ImageView) findViewById(R.id.door_Btn);
         setBtn = (ImageView) findViewById(R.id.set_Btn);
 
         mainpage_layout = (LinearLayout) findViewById(R.id.mainpage_layout);
         mainpage_layout.setOnClickListener(this);
-        sensor_layout = (LinearLayout) findViewById(R.id.sensor_layout);
-        sensor_layout.setOnClickListener(this);
         door_layout = (LinearLayout) findViewById(R.id.door_layout);
         door_layout.setOnClickListener(this);
         set_layout = (LinearLayout) findViewById(R.id.set_layout);
@@ -148,45 +131,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (x) {
             case 0:
                 mainBtn.setBackgroundResource(R.drawable.main);
-                sensorBtn.setBackgroundResource(R.drawable.sensor1);
                 doorBtn.setBackgroundResource(R.drawable.door1);
                 setBtn.setBackgroundResource(R.drawable.user1);
 
                 mainText.setTextColor(getResources().getColor(R.color.set));
-                sensorText.setTextColor(getResources().getColor(R.color.unset));
                 doorText.setTextColor(getResources().getColor(R.color.unset));
                 setText.setTextColor(getResources().getColor(R.color.unset));
                 break;
             case 1:
                 mainBtn.setBackgroundResource(R.drawable.main1);
-                sensorBtn.setBackgroundResource(R.drawable.sensor);
-                doorBtn.setBackgroundResource(R.drawable.door1);
-                setBtn.setBackgroundResource(R.drawable.user1);
-
-                mainText.setTextColor(getResources().getColor(R.color.unset));
-                sensorText.setTextColor(getResources().getColor(R.color.set));
-                doorText.setTextColor(getResources().getColor(R.color.unset));
-                setText.setTextColor(getResources().getColor(R.color.unset));
-                break;
-            case 2:
-                mainBtn.setBackgroundResource(R.drawable.main1);
-                sensorBtn.setBackgroundResource(R.drawable.sensor1);
                 doorBtn.setBackgroundResource(R.drawable.door);
                 setBtn.setBackgroundResource(R.drawable.user1);
 
                 mainText.setTextColor(getResources().getColor(R.color.unset));
-                sensorText.setTextColor(getResources().getColor(R.color.unset));
                 doorText.setTextColor(getResources().getColor(R.color.set));
                 setText.setTextColor(getResources().getColor(R.color.unset));
                 break;
-            case 3:
+            case 2:
                 mainBtn.setBackgroundResource(R.drawable.main1);
-                sensorBtn.setBackgroundResource(R.drawable.sensor1);
                 doorBtn.setBackgroundResource(R.drawable.door1);
                 setBtn.setBackgroundResource(R.drawable.user);
 
                 mainText.setTextColor(getResources().getColor(R.color.unset));
-                sensorText.setTextColor(getResources().getColor(R.color.unset));
                 doorText.setTextColor(getResources().getColor(R.color.unset));
                 setText.setTextColor(getResources().getColor(R.color.set));
                 break;

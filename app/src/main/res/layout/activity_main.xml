@@ -61,27 +61,6 @@
                 android:text="主页" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/sensor_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/sensor_Btn"
-                android:layout_width="40sp"
-                android:layout_height="40sp"
-                android:layout_gravity="center"
-                android:background="@drawable/setting" />
-
-            <TextView
-                android:id="@+id/sensor_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="传感器" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/door_layout"
