@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.mao.smart_building.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#abcdef">
+
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="智能楼宇安防"
+            android:textColor="#00ff00"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#abcdef" />
+
+    <LinearLayout
+        android:id="@+id/view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/mainpage_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_Btn"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:background="@drawable/main" />
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="主页" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sensor_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/sensor_Btn"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:background="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/sensor_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="传感器" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/door_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/door_Btn"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:background="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/door_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="门禁" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/set_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/set_Btn"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:background="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/set_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="个人中心" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

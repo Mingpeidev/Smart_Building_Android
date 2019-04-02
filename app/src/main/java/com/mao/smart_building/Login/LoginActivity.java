@@ -1,0 +1,157 @@
+package com.mao.smart_building.Login;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.mao.smart_building.MainActivity;
+import com.mao.smart_building.R;
+import com.mao.smart_building.Util.ToastUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+/**
+ * Created by Mingpeidev on 2019/3/15.
+ */
+
+public class LoginActivity extends AppCompatActivity {
+
+    private Handler loginhander;
+
+    private EditText usernameEdit = null;
+    private EditText psdEdit = null;
+    private Button loginBtn = null;
+    private Button registerBtn = null;
+    private CheckBox rememberpsdBox;
+    private Button jumpBtn = null;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+        setContentView(R.layout.login_layout);
+
+        usernameEdit = (EditText) findViewById(R.id.username_Edit);
+        psdEdit = (EditText) findViewById(R.id.password_Edit);
+        loginBtn = (Button) findViewById(R.id.login_Btn);
+        registerBtn = (Button) findViewById(R.id.register_Btn);
+        rememberpsdBox = (CheckBox) findViewById(R.id.rememberpassword_Box);
+        jumpBtn = (Button) findViewById(R.id.jump_Btn);
+
+        psdEdit.setTransformationMethod(PasswordTransformationMethod.getInstance());//设置密码不可见
+        psdEdit.setSelection(psdEdit.getText().toString().length());//设置光标在不可见后
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (usernameEdit.getText().toString().trim().equals("")) {
+                    ToastUtil.showToast(LoginActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT);
+                } else if (usernameEdit.getText().length() < 3 || usernameEdit.getText().length() > 10) {
+                    ToastUtil.showToast(LoginActivity.this, "用户名在3-10位之间！", Toast.LENGTH_SHORT);
+                } else if (psdEdit.getText().toString().trim().equals("")) {
+                    ToastUtil.showToast(LoginActivity.this, "密码不能为空！", Toast.LENGTH_SHORT);
+                } else if (psdEdit.getText().length() < 6 || psdEdit.getText().length() > 10) {
+                    ToastUtil.showToast(LoginActivity.this, "密码在6-10位之间！", Toast.LENGTH_SHORT);
+                } else {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            int logindata = 2;
+
+                            try {
+                                OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象
+                                Request request = new Request.Builder()
+                                        .url("http://192.168.137.1:8080/Smart_Building/user/logininphone?username=" + usernameEdit.getText() +
+                                                "&password=" + psdEdit.getText())
+                                        .build();//创建Request 对象
+                                Response response = null;
+                                response = client.newCall(request).execute();//得到Response 对象
+                                if (response.isSuccessful()) {
+                                    //解析json
+                                    JSONObject jsonObject = new JSONObject(response.body().string());
+                                    logindata = jsonObject.getInt("data");
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                            Message msg = Message.obtain();
+                            msg.what = logindata;
+                            loginhander.sendMessage(msg);
+
+                            Log.d("haha", "login: " + logindata);
+                        }
+                    }).start();
+                }
+
+            }
+        });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        jumpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        loginhander = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        ToastUtil.showToast(LoginActivity.this, "登陆失败！", Toast.LENGTH_SHORT);
+                        break;
+                    case 1:
+                        Intent intent = new Intent();
+                        ToastUtil.showToast(LoginActivity.this, "登陆成功！", Toast.LENGTH_SHORT);
+                        intent.setClass(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case 2:
+                        ToastUtil.showToast(LoginActivity.this, "网络未连接！", Toast.LENGTH_SHORT);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+    }
+
+
+}
