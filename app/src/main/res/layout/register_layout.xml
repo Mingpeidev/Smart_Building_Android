@@ -1,87 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="100sp"
-        android:text="智能楼宇安防系统注册"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/username_Edit1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:drawableLeft="@android:drawable/ic_menu_myplaces"
+        android:hint="请输入您的用户名" />
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50sp">
 
-        <TableRow>
+    <EditText
+        android:id="@+id/password_Edit1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/username_Edit1"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:hint="请输入您的密码" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50sp"
-                android:text="用户名"
-                android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/username_Edit1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:hint="请输入你的用户名"
-                android:textSize="24sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50sp"
-                android:text="密码"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/password_Edit1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:hint="请输入你的密码"
-                android:textSize="24sp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50sp"
-                android:text="密码"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/password_Edit2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:hint="请再次输入你的密码"
-                android:textSize="24sp" />
-        </TableRow>
-    </TableLayout>
+    <EditText
+        android:id="@+id/password_Edit2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/password_Edit1"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:hint="请确认您的密码" />
 
     <Button
         android:id="@+id/register_Btn1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40sp"
-        android:background="#00ff00"
-        android:text="      注册      "
-        android:textSize="24sp" />
+        android:layout_alignLeft="@+id/password_Edit2"
+        android:layout_alignStart="@+id/password_Edit2"
+        android:layout_below="@+id/password_Edit2"
+        android:layout_marginTop="20dp"
+        android:background="#1cf718"
+        android:text="确定"
+        android:textSize="20dp" />
 
+    <Button
+        android:id="@+id/registercancel_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_Btn1"
+        android:layout_alignStart="@+id/register_Btn1"
+        android:layout_below="@+id/register_Btn1"
+        android:layout_marginTop="10dp"
+        android:background="#f71818"
+        android:text="取消"
+        android:textSize="20dp" />
 
-</LinearLayout>
+</RelativeLayout>

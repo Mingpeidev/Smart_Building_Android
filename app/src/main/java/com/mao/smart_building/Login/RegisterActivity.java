@@ -1,5 +1,6 @@
 package com.mao.smart_building.Login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -37,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText psdEdit1 = null;
     private EditText psdEdit2 = null;
     private Button registerBtn1 = null;
+    private Button registercancel_Btn = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         psdEdit1 = (EditText) findViewById(R.id.password_Edit1);
         psdEdit2 = (EditText) findViewById(R.id.password_Edit2);
         registerBtn1 = (Button) findViewById(R.id.register_Btn1);
+        registercancel_Btn = (Button) findViewById(R.id.registercancel_Btn);
 
         psdEdit1.setTransformationMethod(PasswordTransformationMethod.getInstance());//设置密码不可见
         psdEdit1.setSelection(psdEdit1.getText().toString().length());//设置光标在不可见后
@@ -129,5 +132,13 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         };
+        registercancel_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
