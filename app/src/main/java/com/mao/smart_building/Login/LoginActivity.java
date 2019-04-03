@@ -1,6 +1,7 @@
 package com.mao.smart_building.Login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -61,6 +62,20 @@ public class LoginActivity extends AppCompatActivity {
 
         psdEdit.setTransformationMethod(PasswordTransformationMethod.getInstance());//设置密码不可见
         psdEdit.setSelection(psdEdit.getText().toString().length());//设置光标在不可见后
+
+
+        SharedPreferences spf = getSharedPreferences("loginsuccess", MODE_PRIVATE);//保存记住密码：用户名，密码，记住密码状态
+        final SharedPreferences.Editor editor = spf.edit();
+        boolean isRemember = spf.getBoolean("rememberpassword", false);
+        if (isRemember) {
+            //将账号和密码都设置到登陆界面文本中
+            String username = spf.getString("username", "");
+            String password = spf.getString("password", "");
+            usernameEdit.setText(username);
+            psdEdit.setText(password);
+            rememberpsdBox.setChecked(true);
+        }
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +152,15 @@ public class LoginActivity extends AppCompatActivity {
                         ToastUtil.showToast(LoginActivity.this, "登陆失败！", Toast.LENGTH_SHORT);
                         break;
                     case 1:
+                        if (rememberpsdBox.isChecked()) {//记住密码，登陆用
+                            editor.putBoolean("rememberpassword", true);
+                            editor.putString("username", usernameEdit.getText().toString().trim());
+                            editor.putString("password", psdEdit.getText().toString().trim());
+                        } else {
+                            editor.clear();
+                        }
+                        editor.apply();
+
                         Intent intent = new Intent();
                         ToastUtil.showToast(LoginActivity.this, "登陆成功！", Toast.LENGTH_SHORT);
                         intent.setClass(LoginActivity.this, MainActivity.class);

@@ -20,4 +20,9 @@ public class MainpageFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

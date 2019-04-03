@@ -47,7 +47,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         SharedPreferences sf = getSharedPreferences("loginsuccess", MODE_PRIVATE);
-        String username = sf.getString("nameurl", "");
+        String username = sf.getString("username", "");
         if (username == "") {
             SharedPreferences spf1 = getSharedPreferences("welcomeinfo", MODE_PRIVATE);
             SharedPreferences.Editor editor1 = spf1.edit();
