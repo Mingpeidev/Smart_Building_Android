@@ -7,32 +7,42 @@
     android:orientation="vertical"
     tools:context="com.mao.smart_building.MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#abcdef">
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:background="#89dec4" />
 
         <TextView
             android:id="@+id/title_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:background="#1296db"
+            android:gravity="center"
             android:text="智能楼宇安防"
-            android:textColor="#00ff00"
+            android:textColor="#ffffff"
             android:textSize="30sp" />
-    </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:background="#89dec4" />
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0sp"
         android:layout_weight="1" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#abcdef" />
+        android:layout_height="1sp"
+        android:background="#89dec4" />
 
     <LinearLayout
         android:id="@+id/view_layout"

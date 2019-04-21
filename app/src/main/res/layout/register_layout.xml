@@ -3,55 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/username_Edit1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        android:drawableLeft="@android:drawable/ic_menu_myplaces"
-        android:hint="请输入您的用户名" />
+    <RelativeLayout
+        android:id="@+id/register_view"
+        android:layout_width="340dp"
+        android:layout_height="800dp"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/username_Edit1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@android:drawable/ic_menu_myplaces"
+            android:hint="请输入您的用户名" />
 
 
-    <EditText
-        android:id="@+id/password_Edit1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/username_Edit1"
-        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
-        android:hint="请输入您的密码" />
+        <EditText
+            android:id="@+id/password_Edit1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/username_Edit1"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:hint="请输入您的密码" />
 
 
-    <EditText
-        android:id="@+id/password_Edit2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/password_Edit1"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
-        android:hint="请确认您的密码" />
+        <EditText
+            android:id="@+id/password_Edit2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/password_Edit1"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:hint="请确认您的密码" />
 
-    <Button
-        android:id="@+id/register_Btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password_Edit2"
-        android:layout_alignStart="@+id/password_Edit2"
-        android:layout_below="@+id/password_Edit2"
-        android:layout_marginTop="20dp"
-        android:background="#1cf718"
-        android:text="确定"
-        android:textSize="20dp" />
+        <Button
+            android:id="@+id/register_Btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/password_Edit2"
+            android:layout_alignStart="@+id/password_Edit2"
+            android:layout_below="@+id/password_Edit2"
+            android:layout_marginTop="20dp"
+            android:background="#1cf718"
+            android:text="确定"
+            android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/registercancel_Btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/register_Btn1"
-        android:layout_alignStart="@+id/register_Btn1"
-        android:layout_below="@+id/register_Btn1"
-        android:layout_marginTop="10dp"
-        android:background="#f71818"
-        android:text="取消"
-        android:textSize="20dp" />
+        <Button
+            android:id="@+id/registercancel_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/register_Btn1"
+            android:layout_alignStart="@+id/register_Btn1"
+            android:layout_below="@+id/register_Btn1"
+            android:layout_marginTop="10dp"
+            android:background="#f71818"
+            android:text="取消"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
 </RelativeLayout>

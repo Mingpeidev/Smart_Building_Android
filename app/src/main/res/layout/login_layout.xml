@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:id="@+id/login_view"
-        android:layout_width="400dp"
+        android:layout_width="340dp"
         android:layout_height="800dp"
         android:layout_centerInParent="true">
 
@@ -18,8 +18,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
             android:layout_alignWithParentIfMissing="false"
+            android:layout_marginTop="20dp"
             android:background="@drawable/background" />
 
         <EditText
@@ -29,7 +29,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/logo"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:hint="请输入您的用户名" />
 
@@ -73,7 +73,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/password_Edit"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="100dp"
             android:background="#545bcb"
             android:text="登录"
             android:textColor="#ffffff"

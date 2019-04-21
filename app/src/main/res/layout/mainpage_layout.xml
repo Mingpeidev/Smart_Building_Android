@@ -159,13 +159,26 @@
                 android:text="供氧" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100sp"
-            android:text="传感器数据表格显示"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="传感器数据表格显示" />
+
+        <Button
+            android:id="@+id/opensocketBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打开socket" />
+
+        <Button
+            android:id="@+id/closesocketBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭socket" />
     </LinearLayout>
 </LinearLayout>

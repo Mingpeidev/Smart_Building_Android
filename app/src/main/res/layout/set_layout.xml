@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:text="欢迎您，mao" />
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/set"
-        android:text="个人信息设置"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="智能控制设置"/>
-    <Button
-        android:id="@+id/exitBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="退出"/>
+        <TextView
+            android:id="@+id/welcome_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="欢迎您，mao"
+            android:textSize="20sp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/userset_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/welcome_Text"
+            android:layout_marginTop="100dp"
+            android:background="@color/set"
+            android:text="个人信息设置" />
+
+        <Button
+            android:id="@+id/samrtset_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userset_Btn"
+            android:layout_marginTop="10dp"
+            android:background="@color/set"
+            android:text="智能控制设置" />
+
+        <Button
+            android:id="@+id/exitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/samrtset_Btn"
+            android:layout_marginTop="10dp"
+            android:background="#c98116"
+            android:text="退出" />
+    </RelativeLayout>
+
+</RelativeLayout>
