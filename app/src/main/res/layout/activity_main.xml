@@ -39,15 +39,11 @@
         android:layout_height="0sp"
         android:layout_weight="1" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1sp"
-        android:background="#89dec4" />
-
     <LinearLayout
         android:id="@+id/view_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_menu">
 
         <LinearLayout
             android:id="@+id/mainpage_layout"

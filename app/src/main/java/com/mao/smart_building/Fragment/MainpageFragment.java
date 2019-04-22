@@ -58,16 +58,10 @@ public class MainpageFragment extends Fragment {
     // 输出流对象
     OutputStream outputStream;
 
-    private Button open = null;
-    private Button close = null;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mainpage_layout, null);
-
-        open = view.findViewById(R.id.opensocketBtn);
-        close = view.findViewById(R.id.closesocketBtn);
 
         // 初始化线程池
         mThreadPool = Executors.newCachedThreadPool();
@@ -78,19 +72,6 @@ public class MainpageFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Opensocket();
-            }
-        });
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
     private void Opensocket() {

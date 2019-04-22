@@ -19,6 +19,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Login.RegisterActivity" />
+        <activity android:name=".Activity.SmartsetActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#23a4e7"
+        android:gravity="center"
+        android:text="实时数据显示"
+        android:textColor="#fff"
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +42,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
@@ -44,43 +53,23 @@
                 android:text="光照度："
                 android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="灯："
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="空调："
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="加湿器："
-                android:textSize="20sp" />
-
         </LinearLayout>
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#23a4e7"
+        android:gravity="center"
+        android:text="远程控制"
+        android:textColor="#fff"
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp">
 
         <LinearLayout
@@ -93,13 +82,13 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
                 android:layout_gravity="center"
-                android:background="@drawable/setting" />
+                android:background="@drawable/lamp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="开灯" />
+                android:text="灯" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,13 +101,13 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
                 android:layout_gravity="center"
-                android:background="@drawable/setting" />
+                android:background="@drawable/air" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="开空调" />
+                android:text="空调" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,54 +120,13 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
                 android:layout_gravity="center"
-                android:background="@drawable/setting" />
+                android:background="@drawable/water" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="开加湿器" />
+                android:text="加湿器" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:layout_width="60sp"
-                android:layout_height="60sp"
-                android:layout_gravity="center"
-                android:background="@drawable/setting" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="供氧" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="传感器数据表格显示" />
-
-        <Button
-            android:id="@+id/opensocketBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="打开socket" />
-
-        <Button
-            android:id="@+id/closesocketBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="关闭socket" />
     </LinearLayout>
 </LinearLayout>

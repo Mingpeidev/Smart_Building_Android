@@ -37,14 +37,14 @@ public class ToastUtil {
 
     public static void showToast(Context context, String text, int duration) {
 
-        mToast = Toast.makeText(context, "", duration);//初始化toast
-
-        mToast.setGravity(Gravity.CENTER, 0, 0);//设置位置
-
         LayoutInflater inflater = LayoutInflater.from(context);//设置界面
         LinearLayout view = (LinearLayout) inflater.inflate(R.layout.toast_layout, null);
         TextView toastv = (TextView) view.findViewById(R.id.toast_tv);
         toastv.setText(text);
+
+        mToast = Toast.makeText(context, "", duration);//初始化toast
+
+        mToast.setGravity(Gravity.CENTER, 0, 0);//设置位置
 
         mToast.setView(view);//设置自定义界面
         mToast.show();

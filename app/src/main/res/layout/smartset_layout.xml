@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="温度设置" />
+
+            <Button
+                android:id="@+id/watertemp_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="选择" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="湿度设置" />
+
+            <Button
+                android:id="@+id/humi_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="选择" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="光照度设置" />
+
+            <Button
+                android:id="@+id/light_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="选择" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="开灯时间设置" />
+
+            <Button
+                android:id="@+id/watertime_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="时间选择" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="关灯时间设置" />
+
+            <Button
+                android:id="@+id/o2time_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="时间选择" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="智能控制" />
+
+            <Button
+                android:id="@+id/smart_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="开启" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/submit_Btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="提交" />
+
+            <Button
+                android:id="@+id/x_Btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="取消" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
