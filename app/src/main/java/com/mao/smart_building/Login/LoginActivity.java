@@ -16,7 +16,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mao.smart_building.MainActivity;
+import com.mao.smart_building.Activity.MainActivity;
 import com.mao.smart_building.R;
 import com.mao.smart_building.Util.ToastUtil;
 

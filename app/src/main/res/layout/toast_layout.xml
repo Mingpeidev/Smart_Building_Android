@@ -4,12 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/toast_iv"
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_gravity="center"
-        android:background="@drawable/logo" />
+        android:background="@drawable/logo" />-->
 
     <TextView
         android:id="@+id/toast_tv"

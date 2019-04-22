@@ -18,14 +18,14 @@ import com.mao.smart_building.R;
 
 public class SetFragment extends Fragment {
     private Button exitBtn = null;
-    private Button smartset_Btn=null;
+    private Button smartset_Btn = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.set_layout, null);
         exitBtn = view.findViewById(R.id.exitBtn);
-        smartset_Btn=view.findViewById(R.id.samrtset_Btn);
+        smartset_Btn = view.findViewById(R.id.samrtset_Btn);
 
         return view;
     }
@@ -46,7 +46,6 @@ public class SetFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SmartsetActivity.class);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
     }

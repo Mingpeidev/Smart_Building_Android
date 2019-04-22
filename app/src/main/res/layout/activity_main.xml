@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="com.mao.smart_building.MainActivity">
+    tools:context="com.mao.smart_building.Activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,15 +17,26 @@
             android:layout_height="2sp"
             android:background="#89dec4" />
 
-        <TextView
-            android:id="@+id/title_text"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#1296db"
-            android:gravity="center"
-            android:text="智能楼宇安防"
-            android:textColor="#ffffff"
-            android:textSize="30sp" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1296db"
+                android:gravity="center"
+                android:text="智能楼宇安防"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/setting" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -80,7 +91,7 @@
                 android:layout_width="40sp"
                 android:layout_height="40sp"
                 android:layout_gravity="center"
-                android:background="@drawable/setting" />
+                android:background="@drawable/door" />
 
             <TextView
                 android:id="@+id/door_text"
@@ -102,7 +113,7 @@
                 android:layout_width="40sp"
                 android:layout_height="40sp"
                 android:layout_gravity="center"
-                android:background="@drawable/setting" />
+                android:background="@drawable/user" />
 
             <TextView
                 android:id="@+id/set_text"

@@ -8,7 +8,7 @@ import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
-import com.mao.smart_building.MainActivity;
+import com.mao.smart_building.Activity.MainActivity;
 import com.mao.smart_building.R;
 
 /**

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 import com.mao.smart_building.R;
 
@@ -12,6 +14,9 @@ import com.mao.smart_building.R;
  */
 
 public class SmartsetActivity extends AppCompatActivity {
+
+    private Button cancel_Btn = null;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +25,14 @@ public class SmartsetActivity extends AppCompatActivity {
             actionBar.hide();
         }
         setContentView(R.layout.smartset_layout);
+
+        cancel_Btn = (Button) findViewById(R.id.cancel_Btn);
+
+        cancel_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

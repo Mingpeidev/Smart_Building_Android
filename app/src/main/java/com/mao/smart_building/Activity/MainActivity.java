@@ -1,4 +1,4 @@
-package com.mao.smart_building;
+package com.mao.smart_building.Activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +15,7 @@ import com.mao.smart_building.Adapter.MyFragmentAdapter;
 import com.mao.smart_building.Fragment.DoorFragment;
 import com.mao.smart_building.Fragment.MainpageFragment;
 import com.mao.smart_building.Fragment.SetFragment;
+import com.mao.smart_building.R;
 
 import java.util.ArrayList;
 import java.util.List;
