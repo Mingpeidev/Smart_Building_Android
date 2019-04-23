@@ -2,18 +2,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e4e1e1"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1296db">
+
+            <ImageButton
+                android:id="@+id/cancel_Btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="设置"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -22,17 +54,20 @@
                 android:text="温度设置" />
 
             <Button
-                android:id="@+id/watertemp_Btn"
+                android:id="@+id/temp_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="100dp"
                 android:text="选择" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_below="@+id/set1"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -44,14 +79,17 @@
                 android:id="@+id/humi_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="100dp"
                 android:text="选择" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_below="@+id/set2"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -63,14 +101,17 @@
                 android:id="@+id/light_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="100dp"
                 android:text="选择" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_below="@+id/set3"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -79,17 +120,20 @@
                 android:text="开灯时间设置" />
 
             <Button
-                android:id="@+id/watertime_Btn"
+                android:id="@+id/timeon_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
-                android:text="时间选择" />
+                android:layout_marginLeft="100dp"
+                android:text="选择" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_below="@+id/set4"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -98,17 +142,20 @@
                 android:text="关灯时间设置" />
 
             <Button
-                android:id="@+id/o2time_Btn"
+                android:id="@+id/timeoff_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="100dp"
                 android:text="时间选择" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/set6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_below="@+id/set5"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_set">
 
             <TextView
                 android:layout_width="100dp"
@@ -120,30 +167,20 @@
                 android:id="@+id/smart_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="100dp"
                 android:text="开启" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/submit_Btn"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="提交" />
-
-            <Button
-                android:id="@+id/cancel_Btn"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="取消" />
-        </LinearLayout>
-
-    </LinearLayout>
+            android:layout_below="@+id/set6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_set"
+            android:text="提交" />
+    </RelativeLayout>
 
 </LinearLayout>
