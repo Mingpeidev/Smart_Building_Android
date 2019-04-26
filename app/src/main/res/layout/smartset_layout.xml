@@ -20,7 +20,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/setting" />
+                android:background="@drawable/cancel" />
 
             <TextView
                 android:id="@+id/title_text"
@@ -54,7 +54,7 @@
                 android:text="温度设置" />
 
             <Button
-                android:id="@+id/temp_Btn"
+                android:id="@+id/tempselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -76,7 +76,7 @@
                 android:text="湿度设置" />
 
             <Button
-                android:id="@+id/humi_Btn"
+                android:id="@+id/humiselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -98,7 +98,7 @@
                 android:text="光照度设置" />
 
             <Button
-                android:id="@+id/light_Btn"
+                android:id="@+id/lightselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -120,7 +120,7 @@
                 android:text="开灯时间设置" />
 
             <Button
-                android:id="@+id/timeon_Btn"
+                android:id="@+id/timeonselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -142,7 +142,7 @@
                 android:text="关灯时间设置" />
 
             <Button
-                android:id="@+id/timeoff_Btn"
+                android:id="@+id/timeoffselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -164,7 +164,7 @@
                 android:text="智能控制" />
 
             <Button
-                android:id="@+id/smart_Btn"
+                android:id="@+id/smartselect_Btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
@@ -172,6 +172,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/submitset_Btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/set6"
