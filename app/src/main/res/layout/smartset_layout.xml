@@ -53,12 +53,14 @@
                 android:gravity="center|left"
                 android:text="温度设置" />
 
-            <Button
-                android:id="@+id/tempselect_Btn"
+            <Spinner
+                android:id="@+id/tempselect_Sp"
+                style="@android:style/Widget.Spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
-                android:text="选择" />
+                android:entries="@array/temparr"
+                android:prompt="@string/temp_title"></Spinner>
         </LinearLayout>
 
         <LinearLayout
@@ -75,12 +77,14 @@
                 android:gravity="center|left"
                 android:text="湿度设置" />
 
-            <Button
-                android:id="@+id/humiselect_Btn"
+            <Spinner
+                android:id="@+id/humiselect_Sp"
+                style="@android:style/Widget.Spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
-                android:text="选择" />
+                android:entries="@array/humiarr"
+                android:prompt="@string/humi_title"></Spinner>
         </LinearLayout>
 
         <LinearLayout
@@ -97,12 +101,14 @@
                 android:gravity="center|left"
                 android:text="光照度设置" />
 
-            <Button
-                android:id="@+id/lightselect_Btn"
+            <Spinner
+                android:id="@+id/lightselect_Sp"
+                style="@android:style/Widget.Spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="100dp"
-                android:text="选择" />
+                android:entries="@array/lightarr"
+                android:prompt="@string/light_title"></Spinner>
         </LinearLayout>
 
         <LinearLayout

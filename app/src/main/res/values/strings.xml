@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">楼宇安防</string>
+
+    <string name="temp_title">温度选择</string>
+    <string name="humi_title">湿度选择</string>
+    <string name="light_title">光照度选择(不设置则默认时间控制)</string>
 </resources>
