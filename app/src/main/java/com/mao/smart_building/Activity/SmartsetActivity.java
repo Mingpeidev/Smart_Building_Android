@@ -202,58 +202,88 @@ public class SmartsetActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.timeonselect_Btn:
-                String[] timeon = Stimeon.split(":");
-                new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
-                        timeonselect_Btn.setText(hourofday + ":" + minute);
-                        Stimeon = hourofday + ":" + minute;
-                    }
-                }, Integer.valueOf(timeon[0]), Integer.valueOf(timeon[1]), true).show();
+                if (Stimeon != null) {
+                    String[] timeon = Stimeon.split(":");
+                    new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
+                            timeonselect_Btn.setText(hourofday + ":" + minute);
+                            Stimeon = hourofday + ":" + minute;
+                        }
+                    }, Integer.valueOf(timeon[0]), Integer.valueOf(timeon[1]), true).show();
+                } else {
+                    new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
+                            timeonselect_Btn.setText(hourofday + ":" + minute);
+                            Stimeon = hourofday + ":" + minute;
+                        }
+                    }, 0, 0, true).show();
+                }
                 break;
             case R.id.timeoffselect_Btn:
-                String[] timeoff = Stimeoff.split(":");
-                new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
-                        timeoffselect_Btn.setText(hourofday + ":" + minute);
-                        Stimeoff = hourofday + ":" + minute;
-                    }
-                }, Integer.valueOf(timeoff[0]), Integer.valueOf(timeoff[1]), true).show();
+                if (Stimeoff != null) {
+                    String[] timeoff = Stimeoff.split(":");
+                    new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
+                            timeoffselect_Btn.setText(hourofday + ":" + minute);
+                            Stimeoff = hourofday + ":" + minute;
+                        }
+                    }, Integer.valueOf(timeoff[0]), Integer.valueOf(timeoff[1]), true).show();
+                } else {
+                    new TimePickerDialog(SmartsetActivity.this, android.R.style.Theme_Holo_Light_Panel, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int hourofday, int minute) {
+                            timeoffselect_Btn.setText(hourofday + ":" + minute);
+                            Stimeoff = hourofday + ":" + minute;
+                        }
+                    }, 0, 0, true).show();
+                }
                 break;
             case R.id.smartselect_Btn:
-                if (Smart.equals("on")) {
-                    smartselect_Btn.setText("off");
-                    Smart = "off";
-                } else if (Smart.equals("off")) {
-                    smartselect_Btn.setText("on");
-                    Smart = "on";
+                if (Smart != null) {
+                    if (Smart.equals("on")) {
+                        smartselect_Btn.setText("off");
+                        Smart = "off";
+                    } else if (Smart.equals("off")) {
+                        smartselect_Btn.setText("on");
+                        Smart = "on";
+                    }
+                } else {
+                    smartselect_Btn.setText("未联网");
                 }
                 break;
             case R.id.cancel_Btn:
                 finish();
                 break;
             case R.id.submitset_Btn:
-                RequestBody body = new FormBody.Builder()
-                        .add("temp", Stemp)
-                        .add("humi", Shumi)
-                        .add("light", Slight)
-                        .add("timeon", Stimeon)
-                        .add("timeoff", Stimeoff)
-                        .add("smart", Smart)
-                        .build();
-                HttpUtil.sendRequestWithOkhttpPost("http://192.168.137.1:8080/Smart_Building/user/updateSetting", body, new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
+                if (Smart != null) {
+                    RequestBody body = new FormBody.Builder()
+                            .add("temp", Stemp)
+                            .add("humi", Shumi)
+                            .add("light", Slight)
+                            .add("timeon", Stimeon)
+                            .add("timeoff", Stimeoff)
+                            .add("smart", Smart)
+                            .build();
+                    HttpUtil.sendRequestWithOkhttpPost("http://192.168.137.1:8080/Smart_Building/user/updateSetting", body, new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
 
-                    }
+                        }
 
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
 
-                    }
-                });
-                ToastUtil.showToast(SmartsetActivity.this, "设置成功", Toast.LENGTH_LONG);
+                        }
+                    });
+                    ToastUtil.showToast(SmartsetActivity.this, "设置成功！", Toast.LENGTH_LONG);
+                    finish();
+                } else {
+                    ToastUtil.showToast(SmartsetActivity.this, "未联网，请联网后再设置！", Toast.LENGTH_LONG);
+                    finish();
+                }
                 break;
             default:
                 break;

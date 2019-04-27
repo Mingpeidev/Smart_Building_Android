@@ -157,7 +157,9 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("username", usernameEdit.getText().toString().trim());
                             editor.putString("password", psdEdit.getText().toString().trim());
                         } else {
-                            editor.clear();
+                            editor.putBoolean("rememberpassword", false);
+                            editor.putString("username", usernameEdit.getText().toString().trim());
+                            editor.putString("password", psdEdit.getText().toString().trim());
                         }
                         editor.apply();
 
