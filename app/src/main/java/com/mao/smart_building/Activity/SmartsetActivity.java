@@ -146,7 +146,7 @@ public class SmartsetActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void getData() {
-        HttpUtil.sendRequestWithOkhttpGet("http://192.168.137.1:8080/Smart_Building/user/selectSetting", new Callback() {
+        HttpUtil.sendRequestWithOkhttpAsynGet("http://192.168.137.1:8080/Smart_Building/user/selectSetting", new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -267,7 +267,7 @@ public class SmartsetActivity extends AppCompatActivity implements View.OnClickL
                             .add("timeoff", Stimeoff)
                             .add("smart", Smart)
                             .build();
-                    HttpUtil.sendRequestWithOkhttpPost("http://192.168.137.1:8080/Smart_Building/user/updateSetting", body, new Callback() {
+                    HttpUtil.sendRequestWithOkhttpAsynPost("http://192.168.137.1:8080/Smart_Building/user/updateSetting", body, new Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
 

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.mao.smart_building.Activity.MainActivity;
 import com.mao.smart_building.R;
+import com.mao.smart_building.Util.HttpUtil;
 import com.mao.smart_building.Util.ToastUtil;
 
 import org.json.JSONException;
@@ -25,8 +26,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -90,27 +93,26 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (psdEdit.getText().length() < 6 || psdEdit.getText().length() > 10) {
                     ToastUtil.showToast(LoginActivity.this, "密码在6-10位之间！", Toast.LENGTH_SHORT);
                 } else {
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-
                             int logindata = 2;
 
+                            RequestBody body = new FormBody.Builder()
+                                    .add("username", usernameEdit.getText().toString().trim())
+                                    .add("password", psdEdit.getText().toString().trim())
+                                    .build();
+                            //获取用户信息
+                            String message = HttpUtil.sendRequestWithOkhttpSynPost("http://192.168.137.1:8080/Smart_Building/user/logininphone"
+                                    , body);
+
+                            //解析json
                             try {
-                                OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象
-                                Request request = new Request.Builder()
-                                        .url("http://192.168.137.1:8080/Smart_Building/user/logininphone?username=" + usernameEdit.getText() +
-                                                "&password=" + psdEdit.getText())
-                                        .build();//创建Request 对象
-                                Response response = null;
-                                response = client.newCall(request).execute();//得到Response 对象
-                                if (response.isSuccessful()) {
-                                    //解析json
-                                    JSONObject jsonObject = new JSONObject(response.body().string());
+                                if (message != null) {
+                                    JSONObject jsonObject = new JSONObject(message);
                                     logindata = jsonObject.getInt("data");
                                 }
-                            } catch (IOException e) {
-                                e.printStackTrace();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -120,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                             loginhander.sendMessage(msg);
 
                             Log.d("haha", "login: " + logindata);
+
                         }
                     }).start();
                 }

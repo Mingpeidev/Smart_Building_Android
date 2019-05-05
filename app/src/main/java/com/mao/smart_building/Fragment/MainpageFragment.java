@@ -246,11 +246,21 @@ public class MainpageFragment extends Fragment {
                     outputStream.flush();
 
 
-                    while (!socket.isClosed()) {
+                    while (true) {
                         try {
+
+                            if (socket.isClosed() == true) {
+                                System.out.println("socket已关闭，跳出读取循环");
+                                break;
+                            }
 
                             // 步骤3：通过输入流读取器对象 接收服务器发送过来的数据
                             response = br.readLine();
+
+                            if (response == null) {
+                                System.out.println("服务器发送数据为空，跳出读取循环");
+                                break;
+                            }
 
                             String s = new String("");
                             String t = new String("");
