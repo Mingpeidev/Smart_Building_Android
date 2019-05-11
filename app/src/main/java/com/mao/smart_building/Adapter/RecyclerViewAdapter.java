@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.mao.smart_building.Pojo.Door;
 import com.mao.smart_building.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,19 +18,28 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
 
-    private List<String> mlist = new ArrayList<String>();
+    private List<Door> mdoor;
 
-    public RecyclerViewAdapter(List<String> list) {
-        mlist = list;
+    public RecyclerViewAdapter(List<Door> list) {
+        mdoor = list;
     }
 
-
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView id;
+        TextView residentname;
+        TextView doorid;
+        TextView sex;
+        TextView state;
+        TextView time;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.recycleview_item);
+            id = (TextView) itemView.findViewById(R.id.recycleview_id);
+            residentname = (TextView) itemView.findViewById(R.id.recycleview_residentname);
+            doorid = (TextView) itemView.findViewById(R.id.recycleview_doorid);
+            sex = (TextView) itemView.findViewById(R.id.recycleview_sex);
+            state = (TextView) itemView.findViewById(R.id.recycleview_state);
+            time = (TextView) itemView.findViewById(R.id.recycleview_time);
 
         }
     }
@@ -44,16 +53,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.textView.setText(mlist.get(position));//设置元素值
+
+        Door door = mdoor.get(position);
+
+        holder.id.setText(String.valueOf(door.getId()));//设置元素值
+        holder.residentname.setText(door.getResidentname());
+        holder.doorid.setText(door.getDoorid());
+        holder.sex.setText(door.getSex());
+        holder.state.setText(door.getState());
+        holder.time.setText(door.getTime());
+
+        if (door.getState().equals("")) {
+            holder.state.setVisibility(View.GONE);
+            holder.time.setVisibility(View.GONE);
+            holder.sex.setVisibility(View.VISIBLE);
+        } else {
+            holder.sex.setVisibility(View.GONE);
+            holder.state.setVisibility(View.VISIBLE);
+            holder.time.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mlist.size();
+        return mdoor.size();
     }
 
-    public void refreshData(List<String> valueList) {
-        this.mlist = valueList;
+    public void refreshData(List<Door> valueList) {
+        this.mdoor = valueList;
         notifyDataSetChanged();
     }
 }
