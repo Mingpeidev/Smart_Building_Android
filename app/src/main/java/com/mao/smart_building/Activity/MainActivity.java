@@ -1,5 +1,6 @@
 package com.mao.smart_building.Activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -16,6 +17,7 @@ import com.mao.smart_building.Fragment.DoorFragment;
 import com.mao.smart_building.Fragment.MainpageFragment;
 import com.mao.smart_building.Fragment.SetFragment;
 import com.mao.smart_building.R;
+import com.mao.smart_building.Service.GetInfoService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        //打开服务
+        Intent intent = new Intent(this, GetInfoService.class);
+        startService(intent);
 
         mfragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_main);

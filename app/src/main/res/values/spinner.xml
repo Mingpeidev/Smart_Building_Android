@@ -37,4 +37,9 @@
         <item>400</item>
         <item>500</item>
     </string-array>
+
+    <string-array name="sexarr">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
 </resources>

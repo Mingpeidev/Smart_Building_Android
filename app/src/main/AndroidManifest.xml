@@ -20,8 +20,15 @@
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Login.RegisterActivity" />
         <activity android:name=".Activity.SmartsetActivity" />
+        <activity
+            android:name=".Activity.AlarmInfoActivity"
+            android:launchMode="singleTask"></activity>
+
+        <service android:name=".Service.GetInfoService" />
+        <receiver android:name=".Receiver.AlarmReceiver" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>

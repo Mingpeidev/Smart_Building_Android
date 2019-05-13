@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mao.smart_building.Activity.AlarmInfoActivity;
 import com.mao.smart_building.Activity.SmartsetActivity;
 import com.mao.smart_building.Login.LoginActivity;
 import com.mao.smart_building.R;
@@ -32,6 +33,7 @@ import okhttp3.Response;
 public class SetFragment extends Fragment {
     private Button exitBtn = null;
     private Button smartset_Btn = null;
+    private Button alarminfo_Btn = null;
     private TextView welcome_Text = null;
 
     @Override
@@ -41,6 +43,7 @@ public class SetFragment extends Fragment {
         exitBtn = view.findViewById(R.id.exitBtn);
         smartset_Btn = view.findViewById(R.id.samrtset_Btn);
         welcome_Text = view.findViewById(R.id.welcome_Text);
+        alarminfo_Btn = view.findViewById(R.id.alarminfo_Btn);
 
         return view;
     }
@@ -70,6 +73,14 @@ public class SetFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SmartsetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        alarminfo_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AlarmInfoActivity.class);
                 startActivity(intent);
             }
         });

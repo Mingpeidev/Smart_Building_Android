@@ -163,6 +163,9 @@ public class MainpageFragment extends Fragment {
                     ToastUtil.showToast(getActivity(), "开灯", Toast.LENGTH_LONG);
                     SendDataToService("0" + CharFormatUtil.binaryString2hexString("1" + air_control + alarm_control + door_control));
                 }
+                if (lamp_control.equals("")) {
+                    ToastUtil.showToast(getActivity(), "未获取到控制器数据，请检查网络或串口连接", Toast.LENGTH_LONG);
+                }
             }
         });
 
@@ -177,6 +180,9 @@ public class MainpageFragment extends Fragment {
                     ToastUtil.showToast(getActivity(), "开空调", Toast.LENGTH_LONG);
                     SendDataToService("0" + CharFormatUtil.binaryString2hexString(lamp_control + "1" + alarm_control + door_control));
                 }
+                if (air_control.equals("")) {
+                    ToastUtil.showToast(getActivity(), "未获取到控制器数据，请检查网络或串口连接", Toast.LENGTH_LONG);
+                }
             }
         });
 
@@ -190,6 +196,9 @@ public class MainpageFragment extends Fragment {
                 if (alarm_control.equals("0")) {
                     ToastUtil.showToast(getActivity(), "开加湿器", Toast.LENGTH_LONG);
                     SendDataToService("0" + CharFormatUtil.binaryString2hexString(lamp_control + air_control + "1" + door_control));
+                }
+                if (alarm_control.equals("")) {
+                    ToastUtil.showToast(getActivity(), "未获取到控制器数据，请检查网络或串口连接", Toast.LENGTH_LONG);
                 }
             }
         });
